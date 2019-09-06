@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link rel="manifest" href="manifest.json">
+        <title>PWAてすと</title>
+    </head>
+    <body>
+
+        <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/psw.js').then(()=>{
+                console.log("installing done");
+            }).catch(e=>{
+                alert(e)
+            });
+        };    
+        </script>
+    </body>
+</html>
