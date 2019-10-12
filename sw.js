@@ -1,8 +1,6 @@
 var CACHE_NAME = "0.0.9";
 const FILES_TO_CACHE = [
     './index.html',
-    //'./manifest.json',
-    //'./momiji.PNG',
     './drawing.svg'
 ];
 
@@ -32,8 +30,7 @@ self.addEventListener('activate', function(event) {
   self.addEventListener('fetch', function(evt) {
     evt.respondWith(
         caches.match(evt.request).then(res=>{
-          if(res)return res;
-          return fetch(evt.request);
+          return res || fetch(evt.request);
         })
     );
   });
