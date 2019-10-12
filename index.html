@@ -1,18 +1,24 @@
 <html>
     <head>
         <link rel="manifest" href="manifest.json">
-        <title>PWAてすと</title>
+        <!-- android -->
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js').then(function() {
+                    console.log('sucsessed');
+                }).catch(function(err) {
+                    console.log('error:', err);
+                });
+            }
+        </script>
+        <title>PWA Test Page</title>
     </head>
     <body>
-
-        <script>
-        if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/psw.js').then(()=>{
-                console.log("installing done");
-            }).catch(e=>{
-                alert(e)
-            });
-        };    
-        </script>
+        v0.0.9
+        <img src="./drawing.svg" style="position:fixed;">
     </body>
 </html>
