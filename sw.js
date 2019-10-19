@@ -34,3 +34,13 @@ self.addEventListener('activate', function(event) {
         })
     );
   });
+  /*
+   s = ["72x72","96x96", "128x128", "144x144", "152x152", "192x192", "384x384", "512x512"]
+  for(x=0;x<s.length;x++){
+... console.log(`{
+.....     "src": "./icon-${s[x]}.png",
+.....     "sizes": "${s[x]}",
+.....     "type": "image/png"
+..... },`);
+... }
+*/
