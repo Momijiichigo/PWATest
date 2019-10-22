@@ -3,7 +3,7 @@ const FILES_TO_CACHE = [
     './index.html',
     './drawing.svg'
 ];
-const mainWin=null;
+let mainWin=null;
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
