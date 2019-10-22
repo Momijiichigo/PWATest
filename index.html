@@ -23,7 +23,7 @@
             }
             const messageChannel = new MessageChannel();
             navigator.serviceWorker.controller.postMessage("start",[messageChannel.port2]);
-            messageChannel.port1.addEventListener(e=>{
+            messageChannel.port1.addEventListener("message",e=>{
                 console.log(e.data);
             });
         </script>
