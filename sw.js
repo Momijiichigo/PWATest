@@ -1,4 +1,4 @@
-var CACHE_NAME = "0.0.18bb";
+var CACHE_NAME = "0.0.19";
 const FILES_TO_CACHE = [
     './index.html',
     './drawing.svg'
@@ -37,7 +37,7 @@ self.addEventListener('fetch', function(evt) {
 });
 self.addEventListener('message', function(event){
   console.log("SW Received Message: " + event.data);
-  mainWin=event.ports[0];
+  if(event.data=="start")mainWin=event.ports[0];
 });
 
   /*
