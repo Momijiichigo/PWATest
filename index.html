@@ -12,12 +12,20 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="orange">
         <script>
             if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.addEventListener('message', function(event) {
+                    console.log(event.data);
+                });
                 navigator.serviceWorker.register('./sw.js').then(function() {
                     console.log('sucsessed');
                 }).catch(function(err) {
                     console.log('error:', err);
                 });
             }
+            const messageChannel = new MessageChannel();
+            navigator.serviceWorker.controller.postMessage("start",[messageChannel.port2]);
+            messageChannel.port1.addEventListener(e=>{
+                console.log(e.data);
+            });
         </script>
         <title>PWA Test Page</title>
     </head>
