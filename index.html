@@ -24,13 +24,13 @@
             const messageChannel = new MessageChannel();
             navigator.serviceWorker.controller.postMessage("start",[messageChannel.port2]);
             messageChannel.port1.addEventListener("message",e=>{
-                console.log(e.data);
+                console.log("CONNECTION:"+e.data);
             });
         </script>
         <title>PWA Test Page</title>
     </head>
     <body>
-        <a href="javascript:location.href=prompt('aaa','https://google.com')" >v0.0.20</a>
+        <a href="javascript:location.href=prompt('aaa','https://google.com')" >v0.0.21</a>
         <img src="./drawing.svg" style="position:fixed;">
     </body>
 </html>

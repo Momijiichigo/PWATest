@@ -1,4 +1,4 @@
-var CACHE_NAME = "0.0.20";
+var CACHE_NAME = "0.0.21";
 const FILES_TO_CACHE = [
     './index.html',
     './drawing.svg'
@@ -21,6 +21,7 @@ self.addEventListener('activate', function(event) {
           return Promise.all(keyList.map((key) => {
             if (key !== CACHE_NAME) {
               console.log('[ServiceWorker] Removing old cache', key);
+              if(mainWin!=null)mainWin.postMessage("removingOld");
               return caches.delete(key);
             }
           }));
