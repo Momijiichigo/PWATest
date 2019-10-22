@@ -1,4 +1,4 @@
-var CACHE_NAME = "0.0.17";
+var CACHE_NAME = "0.0.18";
 const FILES_TO_CACHE = [
     './index.html',
     './drawing.svg'
