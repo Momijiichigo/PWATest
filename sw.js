@@ -1,7 +1,7 @@
 var CACHE_NAME = "0.0.22";
 const FILES_TO_CACHE = [
     './index.html',
-    './drawing.svg'
+    './icon/drawing.svg'
 ];
 let mainWin=null;
 self.addEventListener('install', function(event) {
